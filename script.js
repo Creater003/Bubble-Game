@@ -18,10 +18,11 @@ function makeBubble(){
     }
     document.querySelector(".bubbles").innerHTML=temp
 }
+let timer =60
+
 
 function runTimer(){
 //creating the timer function 
-    var timer =60
     //setting the timer value to 60
     var timerbox = document.querySelector('.timerbox');
         timerbox.textContent = timer;
@@ -33,15 +34,36 @@ function runTimer(){
                 clearInterval(countDown)
                 timerbox.textContent = '0'
             }
+            
 
             else{
                 //showing the left time
                 timerbox.textContent = timer;
                 timer--;
             }
-       },1000) 
+            // console.log(timer);
+            if (timer <=0) {
+                window.location.href="index2.html"
+            
+                 
+                }
+            
+            
+     
+            
+       },1000)
+    //    console.log(timer);
+       
+       
+
+      
+
+       
 
 }
+// console.log(timer);
+
+
     //generating the random number to hit
     function hittingNumberFunction(){
     hittingNumber = Math.floor(Math.random()*10)
